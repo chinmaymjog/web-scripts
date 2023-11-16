@@ -124,8 +124,3 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
     }
   }
 }
-
-# Outputs public IP of our virtual machine
-output "VM_Public_IP" {
-  value = azurerm_linux_virtual_machine.vm.public_ip_address
-}

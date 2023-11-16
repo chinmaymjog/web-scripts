@@ -20,8 +20,8 @@ resource "azurerm_virtual_network" "vnet" {
   location            = azurerm_resource_group.rg.location
 }
 # Create a subnet in the virtual network 
-resource "azurerm_subnet" "snet_vmss" {
-  name                 = "snet_vmss"
+resource "azurerm_subnet" "snet_vm" {
+  name                 = "snet_vm"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["192.168.1.0/24"]
@@ -46,7 +46,7 @@ resource "azurerm_network_security_group" "nsg" {
 }
 # Associate network security group to subnet
 resource "azurerm_subnet_network_security_group_association" "nsg_asso_vm" {
-  subnet_id                 = azurerm_subnet.snet_vmss.id
+  subnet_id                 = azurerm_subnet.snet_vm.id
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 # Create Public IP for virtual machine
@@ -64,7 +64,7 @@ resource "azurerm_network_interface" "nic" {
   location            = azurerm_resource_group.rg.location
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.snet_vmss.id
+    subnet_id                     = azurerm_subnet.snet_vm.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.pip.id
   }
@@ -91,7 +91,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
   os_disk {
-    name                 = "od-vm"
+    name                 = "osdisk"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
