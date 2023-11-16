@@ -6,3 +6,4 @@
 **/.env
 **/deploy.sh
 **/ssh-key*
+**/author_fix.sh
