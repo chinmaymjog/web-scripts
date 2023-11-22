@@ -4,6 +4,8 @@
 **/*.tfstate
 **/*.tfstate.backup
 **/.env
+**/*.env
 **/deploy.sh
 **/ssh-key*
 **/author_fix.sh
+**/*.json

@@ -10,7 +10,7 @@ log "Updating Operating System"
 sudo apt-get update
 sleep 15
 log "Installing basic packages for smooth system functioning"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq bash-completion python3-pip logrotate rkhunter fail2ban
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq bash-completion fail2ban
 
 log "Installing Docker"
 curl -fsSL https://get.docker.com -o get-docker.sh
