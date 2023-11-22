@@ -7,5 +7,9 @@
 **/*.env
 **/deploy.sh
 **/ssh-key*
+<<<<<<< HEAD
 **/author_fix.sh
 **/*.json
+=======
+**/author_fix.sh
+>>>>>>> 1e83c53834070dfb6d71b445654ab974514bb710
