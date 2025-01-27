@@ -44,7 +44,7 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
 " | sudo tee /etc/ssh/sshd_config
 
-sudo systemctl reload sshd.service
+sudo systemctl reload ssh.service
 
 log "Enableing firewall & allow SSH, HTTP, HTTPS services"
 echo "y" | sudo ufw enable
