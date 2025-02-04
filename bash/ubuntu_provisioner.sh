@@ -58,6 +58,7 @@ sudo ufw --force enable
 sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
+sudo ufw allow 8080/tcp
 
 log "Enabling and configuring fail2ban to protect SSH against DDoS"
 sudo systemctl enable --now fail2ban.service
