@@ -8,9 +8,9 @@ variables {
 
 source "azure-arm" "ubuntu-22_4-docker" {
    os_type = "Linux"
-   image_publisher = "canonical"
-   image_offer = "0001-com-ubuntu-server-jammy"
-   image_sku = "22_04-lts"
+   image_publisher = "Canonical"
+   image_offer = "ubuntu-24_04-lts"
+   image_sku = "server"
    managed_image_name = "ubuntu-22_4-docker"
    managed_image_resource_group_name = var.pkr_rg
    location = var.pkr_location
