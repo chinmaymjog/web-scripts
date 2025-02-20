@@ -14,7 +14,7 @@ log "Updating Operating System"
 sudo apt-get update -qq
 
 log "Installing basic packages for smooth system functioning"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq bash-completion fail2ban lvm2 nfs-common zip
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq bash-completion fail2ban lvm2 nfs-common zip mysql-client
 
 log "Add time stamp to history"
 echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "' | sudo tee -a /root/.bashrc
